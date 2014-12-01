@@ -1,1 +1,27 @@
-<%= link_to 'Create New Task', new_event_path %>
+<h1>Events </h1>
+
+<%= link_to 'Create New Event', new_event_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Requires Id</th>
+      <th>Capactiy</th>
+      <th>Directions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+    <tr>
+      <td><%= event.date %></td>
+      <td><%= event.description %></td>
+      <td><%= event.requires_id %></td>
+      <td><%= event.capacity %></td>
+      <td><%= event.directions %></td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
